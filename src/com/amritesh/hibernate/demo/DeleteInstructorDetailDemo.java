@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 import com.amritesh.hibernate.entity.demo.Instructor;
 import com.amritesh.hibernate.entity.demo.InstructorDetail;
 
-public class GetInstructorDetail {
+public class DeleteInstructorDetailDemo {
 
 	public static void main(String[] args) {
 		SessionFactory sessionFactory = new Configuration()
@@ -25,7 +25,7 @@ public class GetInstructorDetail {
 			InstructorDetail instructorDetail = session.get(InstructorDetail.class, 4);
 			System.out.println(instructorDetail);
 			System.out.println(instructorDetail.getInstructor());
-			
+			session.delete(instructorDetail);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();

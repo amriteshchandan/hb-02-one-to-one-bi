@@ -22,21 +22,27 @@ public class CreateDemo {
 			session = sessionFactory.getCurrentSession();
 			session.beginTransaction();
 
-			Instructor instructor1 = new Instructor("Ankur", "B", "ankur.b@gmail.com");
-			Instructor instructor2 = new Instructor("Amritesh", "C", "amritesh.c@gmail.com");
-			Instructor instructor3 = new Instructor("Aman", "R", "aman.r@gmail.com");
-
-			InstructorDetail instructorDetail3 = new InstructorDetail("https://www.youtube.com/aman", "Sitar");
-			InstructorDetail instructorDetail1 = new InstructorDetail("https://www.youtube.com/ankur", "Guitar");
-			InstructorDetail instructorDetail2 = new InstructorDetail("https://www.youtube.com/amritesh", "Violin");
+//			Instructor instructor1 = new Instructor("Ankur", "B", "ankur.b@gmail.com");
+//			Instructor instructor2 = new Instructor("Amritesh", "C", "amritesh.c@gmail.com");
+//			Instructor instructor3 = new Instructor("Aman", "R", "aman.r@gmail.com");
+//
+//			InstructorDetail instructorDetail3 = new InstructorDetail("https://www.youtube.com/aman", "Sitar");
+//			InstructorDetail instructorDetail1 = new InstructorDetail("https://www.youtube.com/ankur", "Guitar");
+//			InstructorDetail instructorDetail2 = new InstructorDetail("https://www.youtube.com/amritesh", "Violin");
+//			
+//			instructor1.setInstructorDetail(instructorDetail3);
+//			instructor2.setInstructorDetail(instructorDetail1);
+//			instructor3.setInstructorDetail(instructorDetail2);
+//			
+//			session.save(instructor1);
+//			session.save(instructor2);
+//			session.save(instructor3);
 			
+			
+			Instructor instructor1 = new Instructor("AA", "BB", "AABB@gmail.com");
+			InstructorDetail instructorDetail3 = new InstructorDetail("https://www.youtube.com/AABB", "xxxxx");
 			instructor1.setInstructorDetail(instructorDetail3);
-			instructor2.setInstructorDetail(instructorDetail1);
-			instructor3.setInstructorDetail(instructorDetail2);
-			
 			session.save(instructor1);
-			session.save(instructor2);
-			session.save(instructor3);
 			
 			session.getTransaction().commit();
 		} catch (Exception e) {
