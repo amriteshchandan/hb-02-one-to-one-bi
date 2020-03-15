@@ -22,9 +22,9 @@ public class DeleteInstructorDetailDemo {
 			session = sessionFactory.getCurrentSession();
 			session.beginTransaction();
 			
-			InstructorDetail instructorDetail = session.get(InstructorDetail.class, 4);
+			InstructorDetail instructorDetail = session.get(InstructorDetail.class, 6);
 			System.out.println(instructorDetail);
-			System.out.println(instructorDetail.getInstructor());
+			instructorDetail.getInstructor().setInstructorDetail(null);
 			session.delete(instructorDetail);
 			session.getTransaction().commit();
 		} catch (Exception e) {
