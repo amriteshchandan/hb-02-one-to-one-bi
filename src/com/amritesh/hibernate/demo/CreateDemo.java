@@ -19,15 +19,25 @@ public class CreateDemo {
 		Session session = null;
 		
 		try {
-//			Instructor instructor1 = new Instructor("Amritesh", "Chandan", "amritesh.cse@gmail.com");
-//			InstructorDetail instructorDetail1 = new InstructorDetail("https://youtube.com/amritesh", "Love 2 Code !!!");
-//			instructor1.setInstructorDetail(instructorDetail1);
 			session = sessionFactory.getCurrentSession();
 			session.beginTransaction();
-			InstructorDetail instructorDetail1 = session.get(InstructorDetail.class, 3);
+
 			Instructor instructor1 = new Instructor("Ankur", "B", "ankur.b@gmail.com");
-			instructor1.setInstructorDetail(instructorDetail1);
+			Instructor instructor2 = new Instructor("Amritesh", "C", "amritesh.c@gmail.com");
+			Instructor instructor3 = new Instructor("Aman", "R", "aman.r@gmail.com");
+
+			InstructorDetail instructorDetail3 = new InstructorDetail("https://www.youtube.com/aman", "Sitar");
+			InstructorDetail instructorDetail1 = new InstructorDetail("https://www.youtube.com/ankur", "Guitar");
+			InstructorDetail instructorDetail2 = new InstructorDetail("https://www.youtube.com/amritesh", "Violin");
+			
+			instructor1.setInstructorDetail(instructorDetail3);
+			instructor2.setInstructorDetail(instructorDetail1);
+			instructor3.setInstructorDetail(instructorDetail2);
+			
 			session.save(instructor1);
+			session.save(instructor2);
+			session.save(instructor3);
+			
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
